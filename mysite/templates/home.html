@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+
+
+<div>
+    <div class="NAME">
+        <h1>Tweets</h1>
+        <ul>
+           {% for i in name %} 
+            <li>
+                
+                {{ i.id }}
+              <h1 class="main"><a href="{% url 'polls:profile_detail' i.id %}" </a></h1>
+                {% if  0 == i.gender %}
+                    <h3>MALE</h3>
+                {% else %}
+                    <h3>FEMALE</h3>
+                {% endif%}
+                
+            
+                <h3>{{i.address}}</h3>
+            </li>
+            {% endfor%}
+        </ul>
+       
+    </div>
+</div>
+            
+{% endblock%}
